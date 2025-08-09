@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>モンティ・ホール問題</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>モンティ・ホール問題 シミュレーション</h1>
+    <div class="controls">
+        <label for="numDoors">ドアの数を選択してください:</label>
+        <select id="numDoors">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <button id="resetDoorsButton">統計をリセット</button>
+    </div>
+    <div id="results">
+        <p>総試行回数: <span id="totalTrials">0</span>回</p>
+        <p>選択を変えなかった場合の勝率: <span id="stayWinRate">0.00</span>%</p>
+        <p>選択を変えた場合の勝率: <span id="switchWinRate">0.00</span>%</p>
+    </div>
+    <p id="message">ドアを選んでください。</p>
+
+    <div id="doorButtons">
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
