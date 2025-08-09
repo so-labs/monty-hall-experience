@@ -7,8 +7,8 @@ body {
 }
 
 #results p {
- font-size: 1.05em; /* 少し大きくする */
- margin-bottom: 5px; /* 行間を少し開ける */
+    font-size: 1.05em; /* 少し大きくする */
+    margin-bottom: 5px; /* 行間を少し開ける */
 }
 
 /* プルダウンとボタンにも同じフォントを適用 */
