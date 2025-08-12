@@ -1,110 +1,201 @@
+/* ==========================================================
+// 全体的なスタイル設定
+// ========================================================== */
+/* body要素全体に適用されるスタイル */
 body {
+    /* フォントを「Yusei Magic」に設定。読み込めない場合はゴシック体を使用。 */
     font-family: "Yusei Magic", sans-serif;
+    /* テキストを中央揃えにする。 */
     text-align: center;
+    /* 背景色を設定。 */
     background-color: #f0f0f0;
+    /* 文字色を設定。 */
     color: #333;
+    /* 要素の周囲にパディングを追加。 */
     padding: 20px;
 }
 
+/* ==========================================================
+// 結果表示エリア
+// ========================================================== */
+/* IDが「results」の要素内のすべての<p>要素に適用されるスタイル */
 #results p {
-    font-size: 1.05em; /* 少し大きくする */
-    margin-bottom: 5px; /* 行間を少し開ける */
+    /* フォントサイズを通常より少し大きくする。*/
+    font-size: 1.05em;
+    /* 下側にマージンを追加。 */
+    margin-bottom: 5px;
 }
 
-/* プルダウンとボタンにも同じフォントを適用 */
+/* ==========================================================
+// フォーム要素のスタイル
+// ========================================================== */
+/* <select>要素と<button>要素の両方に適用されるスタイル */
 select, button {
+    /* フォントを「Yusei Magic」に設定。 */
     font-family: "Yusei Magic", sans-serif;
+    /* 上下に10px、左右に20pxのパディングを追加。 */
     padding: 10px 20px;
+    /* フォントサイズを標準に設定。 */
     font-size: 1em;
+    /* マウスカーソルを指の形に変える。 */
     cursor: pointer;
+    /* 角を丸くする。 */
     border-radius: 5px;
+    /* 枠線をなくす。 */
     border: none;
-    background-color: #007BFF;
+    /* 背景色を設定。 */
+    background-color: #8b6848;
+    /* 文字色を白色に設定。 */
     color: white;
 }
 
+/* ==========================================================
+// 見出しとコントロールエリア
+// ========================================================== */
+/* <h1>要素に適用されるスタイル */
 h1 {
-    color: #0056b3;
+     /* 文字色を設定 */
+    color: #8b6848;
+    /* 背景にグラデーションを追加 */
+    background-image: linear-gradient(to right, #f0f0f0, #ddd, #f0f0f0);
+    /* 上下左右にパディングを追加 */
+    padding: 10px;
+    /* 上下に余白を追加 */
+    margin: 20px 0;
+    /* テキストを中央揃えにする */
+    text-align: center;
 }
 
+/* クラスが「controls」の要素に適用されるスタイル */
 .controls {
+    /* 下側にマージンを追加。 */
     margin-bottom: 20px;
 }
 
+/* ==========================================================
+// ドアコンテナのスタイル
+// ========================================================== */
+/* IDが「doorButtons」の要素に適用されるスタイル */
 #doorButtons {
+    /* 子要素をFlexboxコンテナとして配置。 */
     display: flex;
+    /* 子要素を中央に揃える。 */
     justify-content: center;
+    /* 子要素がコンテナからはみ出す場合に折り返す。 */
     flex-wrap: wrap;
+    /* 子要素間の間隔を設定。 */
     gap: 20px;
+    /* 上側にマージンを追加。 */
     margin-top: 30px;
 }
 
+/* ==========================================================
+// 個別のドアのスタイル
+// ========================================================== */
+/* クラスが「door」の要素に適用されるスタイル */
 .door {
+    /* 幅を設定。 */
     width: 150px;
+    /* 高さを設定。 */
     height: 250px;
+    /* 背景色を設定。 */
     background-color: #d3a679;
+    /* 枠線を設定。 */
     border: 5px solid #8b6848;
+    /* 角を丸くする。 */
     border-radius: 10px;
+    /* マウスカーソルを指の形に変える。 */
     cursor: pointer;
+    /* 子要素をFlexboxコンテナとして配置。 */
     display: flex;
+    /* 子要素を縦方向に並べる。 */
     flex-direction: column;
+    /* 子要素を縦方向の中央に揃える。 */
     justify-content: center;
+    /* 子要素を横方向の中央に揃える。 */
     align-items: center;
+    /* 絶対配置（position: absolute）の基準点にする。 */
     position: relative;
+    /* transformプロパティの変化に0.2秒のアニメーション効果を適用。 */
     transition: transform 0.2s ease-in-out;
 }
 
+/* ==========================================================
+// ドアのアクションと状態
+// ========================================================== */
+/* .door要素にマウスカーソルを乗せたとき、かつ.openedと.selectedクラスがついていない場合に適用されるスタイル */
 .door:hover:not(.opened):not(.selected) {
+    /* Y軸方向に-5ピクセル移動（少し上に浮き上がる効果）。 */
     transform: translateY(-5px);
 }
 
+/* .door要素内の<img>要素に適用されるスタイル */
 .door img {
+    /* 画像の最大幅を親要素の80%に制限。 */
     max-width: 80%;
+    /* 画像の最大高さを親要素の80%に制限。 */
     max-height: 80%;
-    fill: currentColor; /* SVGアイコンの色を親要素のcolorで制御 */
+    /* SVGアイコンの色を親要素（.door）のcolorプロパティで制御。 */
+    fill: currentColor;
 }
 
+/* .door要素内の<p>要素に適用されるスタイル */
 .door p {
+    /* 上下の余白をなくす。 */
     margin: 0;
+    /* フォントサイズを少し大きくする。 */
     font-size: 1.2em;
+    /* 太字にする。 */
     font-weight: bold;
+    /* 文字色を濃い茶色に設定。 */
     color: #4b382d;
+    /* 絶対配置を適用。 */
     position: absolute;
+    /* 下からの位置を設定。 */
     bottom: 10px;
 }
 
+/* ==========================================================
+// ゲームの進行による状態変化
+// ========================================================== */
+/* .door要素に.selectedクラスが追加されたときに適用されるスタイル */
 .door.selected {
-    border-color: #ffd700; /* 金色に光るような枠線 */
+    /* 枠線の色を設定。 */
+    border-color: #ffd700;
+    /* 枠線の内側と外側に影を適用（光るような効果）。 */
     box-shadow: 0 0 10px #ffd700, inset 0 0 10px #ffd700;
+    /* すべてのプロパティの変化に0.3秒のアニメーション効果を適用。 */
     transition: all 0.3s ease-in-out;
 }
 
+/* .door要素に.openedクラスが追加されたときに適用されるスタイル */
 .opened {
+    /* 背景色を設定。 */
     background-color: #aaa;
+    /* 枠線の色を設定。 */
     border-color: #888;
 }
 
+/* .door要素に.correctクラスが追加されたときに適用されるスタイル */
 .correct {
+    /* 背景色を設定。 */
     background-color: #4CAF50;
+    /* 枠線の色を設定。 */
     border-color: #388E3C;
 }
 
+/* .door要素に.wrongクラスが追加されたときに適用されるスタイル */
 .wrong {
+    /* 背景色を設定。 */
     background-color: #f44336;
+    /* 枠線の色を設定。 */
     border-color: #D32F2F;
 }
 
+/* .door要素に.disabledクラスが追加されたときに適用されるスタイル */
 .disabled {
+    /* マウスカーソルを「許可しない」のアイコンに変える。 */
     cursor: not-allowed;
+    /* 透明度を70%に設定。 */
     opacity: 0.7;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
 }

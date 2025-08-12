@@ -1,39 +1,39 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html> <!-- HTML5の文書であることを宣言 -->
+<html lang="ja"> <!-- ページの言語を日本語に設定 -->
 <head>
-    <meta charset="UTF-8">
-    <title>モンティ・ホール問題</title>
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- 文字コードをUTF-8に設定 -->
+    <title>モンティ・ホール問題</title> <!-- ブラウザのタブに表示されるタイトル -->
+    <meta name="robots" content="noindex, nofollow"> <!-- 検索エンジンにインデックスさせない -->
+    <link rel="stylesheet" href="style.css"> <!-- 外部CSSファイルを読み込み -->
+    
+    <!-- Google Fontsの読み込みを高速化するための事前接続 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Yusei Magicフォントを読み込み -->
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>モンティ・ホール問題 シミュレーション</h1>
-    <div class="controls">
-        <label for="numDoors">ドアの数を選択してください:</label>
-        <select id="numDoors">
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-        </select>
-        <button id="resetDoorsButton">統計をリセット</button>
+    <h1>モンティ・ホール問題 シミュレーション</h1> <!-- ページのメイン見出し -->
+
+    <div class="controls"> <!-- ユーザー操作用のコントロールエリア -->
+        <label for="numDoors">ドアの数を選択してください:</label> <!-- セレクトボックスのラベル -->
+        <select id="numDoors"> <!-- ドアの数を選ぶセレクトボックス -->
+            </select>
+
+        <button id="resetDoorsButton">統計をリセット</button> <!-- 統計をリセットするボタン -->
     </div>
-    <div id="results">
-        <p>総試行回数: <span id="totalTrials">0</span>回</p>
+
+    <div id="results"> <!-- 結果表示エリア -->
+        <p>総試行回数: <span id="totalTrials">0</span></p> <!-- 試行回数を表示 -->
         <p>選択を変えなかった場合の勝率: <span id="stayWinRate">0.00</span>%</p>
         <p>選択を変えた場合の勝率: <span id="switchWinRate">0.00</span>%</p>
     </div>
-    <p id="message">ドアを選んでください。</p>
 
-    <div id="doorButtons">
-        </div>
+    <p id="message">ドアを選んでください。</p> <!-- ユーザーへのメッセージ表示 -->
 
-    <script src="script.js"></script>
+    <div id="doorButtons"></div> <!-- ドアのボタンを配置するエリア -->
+
+    <script src="script.js"></script> <!-- JavaScriptファイルの読み込み -->
 </body>
 </html>
